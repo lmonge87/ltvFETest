@@ -109,7 +109,7 @@ function formModule() {
     }
   });
 
-  formInput.addEventListener("keydown", function () {
+  function handleInput() {
     if (emailIsValid(formInput.value)) {
       formWrapper.classList.remove("search__input--invalid");
       formLabel.innerHTML = "EMAIL";
@@ -119,7 +119,11 @@ function formModule() {
       formLabel.innerHTML = "Please add a valid email address";
       formButton.setAttribute("disabled", "");
     }
-  });
+  }
+
+  formInput.addEventListener("keydown", handleInput);
+  formInput.addEventListener("paste", handleInput);
+  formInput.addEventListener("keyup", handleInput);
 
   formButton.addEventListener("click", async function () {
     var url = new URL(
