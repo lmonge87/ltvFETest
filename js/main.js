@@ -138,22 +138,14 @@ function formModule() {
   formInput.addEventListener("paste", handleInput);
   formInput.addEventListener("keyup", handleInput);
 
-  formButton.addEventListener("click", async function () {
-    var url = new URL(
-      "https://cors-proxy.htmldriven.com/?url=https://ltv-data-api.herokuapp.com/api/v1/records.json"
-    );
-    url.search = new URLSearchParams({
-      email: formInput.value,
-    });
-    var response = await fetch(url);
-    var result = await response.json();
+  function handleSubmit(data) {
     mainWrapper.classList.remove("wrapper--active");
     mainWrapper.classList.add("wrapper--inactive");
     resultsWrapper.classList.remove("wrapper--inactive");
     resultsWrapper.classList.add("wrapper--active");
-    if (result.length !== 0) {
+    if (data.length !== 0) {
       introPopulate(introOptions.results);
-      dataPopulate(result);
+      dataPopulate(data);
       resultsPanel.style.display = "grid";
     } else {
       introPopulate(introOptions.noresults);
@@ -161,6 +153,18 @@ function formModule() {
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
     formInput.value = "";
+  }
+
+  formButton.addEventListener("click", async function () {
+    var url = new URL(
+      "https://cors-anywhere.herokuapp.com/https://ltv-data-api.herokuapp.com/api/v1/records.json"
+    );
+    url.search = new URLSearchParams({
+      email: formInput.value,
+    });
+    var response = await fetch(url);
+    var result = await response.json();
+    handleSubmit(result);
   });
 
   return {
