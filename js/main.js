@@ -122,7 +122,9 @@ function formModule() {
   });
 
   formButton.addEventListener("click", async function () {
-    var url = new URL("https://ltv-data-api.herokuapp.com/api/v1/records.json");
+    var url = new URL(
+      "https://cors-anywhere.herokuapp.com/https://ltv-data-api.herokuapp.com/api/v1/records.json"
+    );
     url.search = new URLSearchParams({
       email: formInput.value,
     });
