@@ -301,7 +301,7 @@ button.search__button {
   }
 
   .search__input label {
-    top: 10px;
+    top: 15px;
   }
 
   input:focus + label,
