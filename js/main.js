@@ -160,6 +160,7 @@ function formModule() {
       resultsPanel.style.display = "none";
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
+    formInput.value = "";
   });
 
   return {
