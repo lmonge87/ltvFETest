@@ -23,15 +23,28 @@ function introPopulate(option) {
 }
 
 function arrayHandler(arr) {
-  const iteratorContainer = arr
-    .map(
-      (item) => `
+  const iteratorContainer =
+    arr &&
+    arr
+      .map(
+        (item) => `
       <p class="column__text">${item}</p>
       `
-    )
-    .join("");
+      )
+      .join("");
   return iteratorContainer;
 }
+
+function stringToPhone(str) {
+  var cleaned = ("" + str).replace(/\D/g, "");
+  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    return "(" + match[1] + ") " + match[2] + "-" + match[3];
+  }
+  return null;
+}
+
+var numbersFormatter = (arr) => arr && arr.map((i) => stringToPhone(i));
 
 function dataPopulate(data) {
   var template = `<div class="column results__content">
@@ -59,7 +72,7 @@ function dataPopulate(data) {
         <div id="column__upRight" class="column__block">
             <div class="column__content phone-number">
                 <h3 class="column__heading">Phone Numbers</h3>
-                ${arrayHandler(data.phone_numbers)}
+                ${arrayHandler(numbersFormatter(data.phone_numbers))}
             </div>
         </div>
         <div id="column__downRight" class="column__block">
