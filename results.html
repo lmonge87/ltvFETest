@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="author" content="Luis Monge" />
+    <meta name="description" content="FE Test" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Normalize.css, added to improve cross-browser compatibility -->
+    <link href="./css/normalize.css" rel="stylesheet" />
+    <!-- Button font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles, specific to this particular site -->
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/results.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="nav">
+        <div class="nav__content nav__content--left">
+            <img src="./img/Logo.svg" alt="Logo" class="nav__logo" />
+        </div>
+        <div class="nav__content nav__content--right">
+            <img src="./img/icn_search.svg" alt="Magnifying Glass Icon" class="nav__icon" />
+            <img src="./img/icn_person.svg" alt="Person Icon" class="nav__icon" />
+        </div>
+    </div>
+    <div class="results__wrapper">
+        <section class="content">
+            <div class="intro">
+                <h2 class="title intro__title">Result</h2>
+                <p class="intro__text">Look at the result below to see the details of the person you’re searched for.
+                </p>
+            </div>
+            <div class="results__panel columns">
+                <div class="column__block">
+                    <div class="column column__circle">
+                        <img src="./img/icn_person.svg" alt="Person Icon" class="icon" />
+                    </div>
+                </div>
+                <div class="column__block" id="fetchedData">
+                    <div class="column results__content">
+                        <div class="results__heading">
+                            <h2 id="name_and_age" class="results__title">Name</h2>
+                            <p id="description" class="results__description column__text">Lorem ipsum dolor sit amet,
+                                consectetur
+                                adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+                        </div>
+                        <div class="columns">
+                            <div id="column__upLeft" class="column__block">
+                                <div class="column__content">
+                                    <h3 class="column__heading">Address</h3>
+                                    <p id="address" class="column__text">Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                        aliqua.</p>
+                                </div>
+                            </div>
+                            <div id="column__downLeft" class="column__block">
+                                <div class="column__content">
+                                    <h3 class="column__heading">Email</h3>
+                                    <p id="email" class="column__text">Lorem ipsum dolor</p>
+                                </div>
+                            </div>
+                            <div id="column__upRight" class="column__block">
+                                <div class="column__content">
+                                    <h3 class="column__heading">Phone Numbers</h3>
+                                    <p id="phone-number" class="column__text">(555) 555-5555</p>
+                                    <p id="phone-number" class="column__text">(555) 555-5555</p>
+                                    <p id="phone-number" class="column__text">(555) 555-5555</p>
+                                </div>
+                            </div>
+                            <div id="column__downRight" class="column__block">
+                                <div class="column__content">
+                                    <h3 class="column__heading">Relatives</h3>
+                                    <p id="relatives" class="column__text">Lorem ipsum</p>
+                                    <p id="relatives" class="column__text">Lorem ipsum</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="bottom__search">
+            <div class="search__component">
+                <div class="heading">
+                    <h1 class="title heading__title">Can’t Find The Right Person?</h1>
+                    <p class="heading__subtitle">
+                        <span class="heading__subtitle--bold">
+                            <strong>Try Again</strong>
+                        </span>
+                        - Make a new search
+                    </p>
+                </div>
+                <div class="search__form">
+                    <form>
+                        <div class="search__input">
+                            <input type="text" name="email" id="email" required />
+                            <label for="email">EMAIL</label>
+                        </div>
+                        <button class="btn search__button">GO!</button>
+                    </form>
+                    <div class="search__caption">
+                        <img src="./img/lock.svg" alt="Lock Icon" class="search__icon" />
+                        <p class="caption__text"><strong>Enter Any Email
+                                Address. They won't be notified.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="footer__links">
+            <p><strong>Terms | Privacy</strong></p>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
